@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dosen - Fisika Instrumentasi</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="1-styles.css">
+    <!-- Link CSS sudah diperbaiki -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="bg-animation"></div>
@@ -13,14 +14,14 @@
 
     <nav>
         <div class="nav-container">
-            <a href="1-index.html" class="logo">FISIKA UIN SYARIF HIDAYATULLAH JAKARTA</a>
+            <a href="index.html" class="logo">FISIKA UIN SYARIF HIDAYATULLAH JAKARTA</a>
             <ul class="nav-links">
-                <li><a href="1-index.html">Beranda</a></li>
-                <li><a href="2-profil.html">Profil</a></li>
-                <li><a href="3-kurikulum.html">Kurikulum</a></li>
-                <li><a href="4-mengapa-instrumentasi.html">Mengapa Instrumentasi</a></li>
-                <li><a href="5-dosen.html" class="active">Dosen</a></li>
-                <li><a href="6-info-selengkapnya.html">Info Selengkapnya</a></li>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kurikulum.html">Kurikulum</a></li>
+                <li><a href="mengapa-instrumentasi.html">Mengapa Instrumentasi</a></li>
+                <li><a href="dosen.html" class="active">Dosen</a></li>
+                <li><a href="info-selengkapnya.html">Info Selengkapnya</a></li>
             </ul>
         </div>
     </nav>
@@ -33,23 +34,39 @@
                     <div class="faculty-avatar"><i class="fas fa-user-graduate"></i></div>
                     <h3>Dr. Ahmad Santoso, M.Si</h3>
                     <p class="title">Kepala Program Studi</p>
+                    <p>Spesialisasi dalam instrumentasi spektroskopi dan karakterisasi material.</p>
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-avatar"><i class="fas fa-user-graduate"></i></div>
                     <h3>Dr. Siti Rahayu, M.T</h3>
                     <p class="title">Dosen Instrumentasi Medis</p>
+                    <p>Ahli dalam pengembangan medical imaging dan biosensor.</p>
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-avatar"><i class="fas fa-user-graduate"></i></div>
                     <h3>Prof. Dr. Budi Pratama</h3>
                     <p class="title">Profesor Instrumentasi Industri</p>
+                    <p>Pioneer dalam pengembangan sistem kontrol otomatis dan IoT industri.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Kode JavaScript asli
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            if (!particlesContainer) return;
+            const particleCount = 50;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        window.addEventListener('load', createParticles);
     </script>
 </body>
 </html>
