@@ -1,3 +1,13 @@
+Tentu, ini kode HTML dan CSS yang sudah dimodifikasi sesuai saran saya untuk mengatasi masalah jarak di atas judul.
+
+Saya telah melakukan dua perubahan utama:
+
+1.  **Memperbaiki `margin` dan `padding` global** pada `*` selector agar nilainya valid (`0` bukan `1.5`).
+2.  **Menambahkan `padding-top` pada `.hero-content`** untuk mendorong konten ke bawah, memberikan jarak yang cukup dari navbar tetap. Saya menaikkan `padding-top` menjadi `6rem`. Anda bisa menyesuaikan nilai ini sesuai kebutuhan.
+
+Berikut adalah kode lengkapnya:
+
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,9 +16,10 @@
     <title>Fisika Instrumentasi</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* PERBAIKAN 1: Mengubah margin dan padding global menjadi 0 */
         * {
-            margin: 1.5;
-            padding: 1.5;
+            margin: 0; 
+            padding: 0;
             box-sizing: border-box;
         }
 
@@ -97,7 +108,8 @@
 
         .hero-content {
             max-width: 800px;
-            padding: 2rem;
+            /* PERBAIKAN 2: Menyesuaikan padding-top untuk memberikan jarak dari navbar */
+            padding: 6rem 2rem 2rem 2rem; /* Top, Right, Bottom, Left */
             position: relative;
             z-index: 2;
         }
@@ -203,7 +215,8 @@
             }
             
             .hero-content {
-                padding: 1rem;
+                /* Sesuaikan padding untuk mobile juga jika diperlukan */
+                padding: 4rem 1rem 1rem 1rem; /* Mungkin butuh lebih sedikit di mobile */
             }
         }
 
@@ -244,7 +257,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">FISIKA UIN SYARIF HIDAYATULLAH JAKARTA</a>
@@ -259,7 +271,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="particles">
             <div class="particle" style="left: 10%; width: 4px; height: 4px; animation-delay: 0s;"></div>
@@ -324,3 +335,4 @@
     </script>
 </body>
 </html>
+```
