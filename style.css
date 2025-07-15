@@ -284,21 +284,24 @@ section {
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.program-card h3, .about-card h3, .faculty-card h3 {
+/* Penyesuaian untuk h3 di dalam card secara umum */
+.program-card h3, .about-card h3 {
     color: #667eea;
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
-/* --- KODE CSS UNTUK FOTO DOSEN DIMULAI DI SINI --- */
+/* Catatan: Properti `.about-card i, .faculty-avatar i` dihilangkan karena sekarang menggunakan gambar */
+
+/* --- KODE CSS KHUSUS UNTUK FOTO DOSEN DIMULAI DI SINI --- */
 
 .faculty-avatar {
-    width: 120px; /* Ukuran avatar yang diinginkan */
-    height: 120px; /* Ukuran avatar yang diinginkan */
+    width: 120px; /* Ukuran lebar wadah avatar */
+    height: 120px; /* Ukuran tinggi wadah avatar */
     border-radius: 50%; /* Membuat bentuk lingkaran */
     overflow: hidden; /* Penting: Memastikan gambar terpotong sesuai bentuk lingkaran */
-    margin: 0 auto 1rem; /* Pusatkan dan beri jarak bawah */
-    /* Baris-baris ini dihapus atau dikomentari karena sebelumnya untuk ikon */
+    margin: 0 auto 1rem; /* Pusatkan avatar dan berikan margin bawah */
+    /* Properti yang dihilangkan karena tidak lagi menggunakan ikon */
     /* background: #e9e9e9; */
     /* display: flex; */
     /* justify-content: center; */
@@ -308,19 +311,28 @@ section {
 }
 
 .faculty-avatar img {
-    width: 100%; /* Gambar mengisi lebar penuh wadahnya */
-    height: 100%; /* Gambar mengisi tinggi penuh wadahnya */
+    width: 100%; /* Gambar mengisi seluruh lebar wadah .faculty-avatar */
+    height: 100%; /* Gambar mengisi seluruh tinggi wadah .faculty-avatar */
     object-fit: cover; /* Penting: Memastikan gambar terpotong agar memenuhi area tanpa distorsi */
     display: block; /* Menghilangkan spasi ekstra di bawah gambar */
 }
 
-/* Sesuaikan margin-top pada h3 di faculty-card jika ingin jaraknya lebih pas */
+/* Penyesuaian margin untuk h3 di dalam faculty-card agar berjarak pas dari foto */
 .faculty-card h3 {
-    margin-top: 1rem; /* Contoh: beri jarak 1rem dari avatar */
-    /* ... properti lainnya untuk h3 dalam faculty-card */
+    color: #667eea; /* Pastikan warna tetap sama */
+    font-size: 1.8rem; /* Pastikan ukuran font tetap sama */
+    margin-top: 1rem; /* Jarak dari foto avatar */
+    margin-bottom: 0.5rem; /* Jarak ke jabatan */
 }
 
-/* --- KODE CSS UNTUK FOTO DOSEN SELESAI DI SINI --- */
+/* Penyesuaian margin untuk p.title di dalam faculty-card */
+.faculty-card .title {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem; /* Jarak ke deskripsi */
+}
+
+/* --- KODE CSS KHUSUS UNTUK FOTO DOSEN SELESAI DI SINI --- */
 
 
 /* Footer */
@@ -413,5 +425,16 @@ footer {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    /* Penyesuaian font size untuk mobile */
+    .faculty-card h3 {
+        font-size: 1.5rem;
+    }
+    .faculty-card .title {
+        font-size: 0.9rem;
+    }
+    .faculty-card p { /* Untuk deskripsi */
+        font-size: 0.9rem;
     }
 }
